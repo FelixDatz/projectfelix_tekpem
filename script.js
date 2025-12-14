@@ -276,7 +276,7 @@ if (startButton) {
     const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
     progressBar.style.width = `${progressPercent}%`;
 
-    nextButton.innerText = "Lanjut ➡";
+    nextButton.innerText = "Lanjut";
   }
 
   function showQuestion(question) {
@@ -331,7 +331,7 @@ if (startButton) {
     nextButton.classList.remove('hide');
 
     if (currentQuestionIndex === questions.length - 1) {
-      nextButton.innerText = "🏁 Lihat Nilai Akhir";
+      nextButton.innerText = "Lihat Nilai Akhir";
       progressBar.style.width = "100%";
     }
   }
@@ -368,11 +368,11 @@ if (startButton) {
     }, 16);
 
     if (score === 100) {
-      resultMessage.innerText = "Sempurna! Kamu jago coding! 🌟";
+      resultMessage.innerText = "Sempurna! Kamu jago coding!";
     } else if (score >= 70) {
-      resultMessage.innerText = "Hebat! Pemahamanmu sudah bagus. 👍";
+      resultMessage.innerText = "Hebat! Pemahamanmu sudah bagus.";
     } else {
-      resultMessage.innerText = "Tetap semangat! Coba pelajari materi lagi. 💪";
+      resultMessage.innerText = "Tetap semangat! Coba pelajari materi lagi.";
     }
   }
 }
