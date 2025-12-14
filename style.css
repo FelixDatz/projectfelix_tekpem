@@ -1,0 +1,498 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(#f0f4ff, #ffffff);
+  margin: 0;
+  color: #333; /* Menambah warna teks agar tidak terlalu hitam pekat */
+}
+
+header {
+  /* 1. Gradian yang lebih 'hidup' (Deep Blue ke Light Blue) */
+  background: linear-gradient(120deg, #1565c0, #42a5f5);
+  color: white;
+  text-align: center;
+  
+  /* 2. Memberi ruang napas (Padding) */
+  padding: 40px 20px;
+  
+  /* 3. Membuatnya tidak menempel ke tepi layar (Margin) */
+  margin: 20px;
+  
+  /* 4. Membuat sudut melengkung (Border Radius) */
+  border-radius: 20px;
+  
+  /* 5. Memberi efek bayangan (Shadow) agar terlihat melayang */
+  box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
+  
+  /* Tambahan: Posisi relative agar elemen di dalamnya rapi */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Opsional: Efek kilau halus di background */
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Memperbesar ukuran font */
+  font-weight: 800;  /* Lebih tebal */
+  letter-spacing: 1px; /* Jarak antar huruf */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Bayangan teks agar terbaca jelas */
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9; /* Sedikit transparan agar tidak berebut perhatian dengan Judul */
+  font-weight: 400;
+  max-width: 600px; /* Membatasi lebar teks agar tidak terlalu panjang di layar lebar */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+}
+
+.accordion {
+  margin-bottom: 20px;
+}
+
+.accordion-btn {
+  width: 100%;
+  background: white;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sedikit diperhalus shadow-nya */
+  transition: 0.3s;
+  color: #1565c0; /* Memberi warna pada judul agar lebih pop */
+}
+
+.accordion-btn:hover {
+  transform: translateY(-4px);
+  background: #e3f2fd;
+  box-shadow: 0 8px 20px rgba(21, 101, 192, 0.15); /* Shadow biru saat hover */
+}
+
+.accordion-btn::after {
+  content: "▼";
+  float: right;
+  transition: transform 0.3s;
+  font-size: 12px; /* Memperkecil panah agar elegan */
+}
+
+.accordion-btn.active::after {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease; /* Tambah transisi opacity */
+  opacity: 0; /* Mulai dari transparan */
+  background: white;
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 0 20px; /* Padding kiri kanan default */
+}
+
+/* Class tambahan agar saat dibuka ada padding atas bawah */
+.accordion-content.active {
+    padding: 20px;
+    opacity: 1;
+    border: 1px solid #e3f2fd; /* Memberi batas tipis */
+}
+
+.accordion-content p,
+.accordion-content ul {
+  margin: 15px 0;
+  line-height: 1.6; /* Menambah jarak antar baris agar enak dibaca */
+}
+
+.box {
+  padding: 20px; /* Sedikit diperbesar */
+  border-radius: 10px;
+  margin: 15px 0;
+  border-left: 5px solid transparent; /* Persiapan untuk aksen warna */
+}
+
+.box.info {
+  background: #e3f2fd;
+  border-left-color: #1e88e5; /* Aksen biru di kiri */
+  color: #0d47a1;
+}
+
+.box.example {
+  background: #f5f5f5; /* Abu-abu lebih modern */
+  border-left-color: #757575; /* Aksen abu di kiri */
+}
+
+/* --- BAGIAN BARU: STYLING KODE --- */
+pre {
+  background: #282c34; /* Warna gelap ala VS Code */
+  color: #abb2bf;      /* Warna teks terang */
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;    /* Scroll horizontal jika kode panjang */
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Font coding */
+  font-size: 14px;
+  margin: 0;
+  border: 1px solid #ddd;
+}
+
+/* Agar list di dalam box rapi */
+.box ul, .box ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.box li {
+    margin-bottom: 8px;
+}
+/* --------------------------------- */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.btn {
+  background: #1e88e5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block; /* Agar padding berfungsi normal */
+  transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1565c0;
+}
+
+/* --- BAGIAN BARU: RESPONSIVE --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px; /* Padding lebih kecil di HP */
+  }
+  
+  .accordion-btn {
+    font-size: 15px;
+    padding: 15px;
+  }
+  
+  pre {
+    font-size: 12px; /* Kode mengecil sedikit di HP */
+  }
+}
+
+/* --- TAMBAHAN KHUSUS UNTUK HALAMAN QUIZ --- */
+
+/* --- GLOBAL STYLE UPGRADES --- */
+/* Tambahkan ini di bagian body atau ganti body lama */
+body.quiz-body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* --- ANIMASI --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 136, 229, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(30, 136, 229, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 136, 229, 0); }
+}
+
+/* Utility Classes */
+.hide { display: none !important; }
+.card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out; /* Animasi masuk */
+}
+
+/* --- START SCREEN --- */
+.icon-header { font-size: 50px; margin-bottom: 10px; }
+.desc { color: #666; margin-bottom: 30px; line-height: 1.6; }
+
+.rules-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.rule-item {
+  background: #e3f2fd;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #1565c0;
+  font-size: 0.9em;
+}
+
+/* --- QUIZ SCREEN --- */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #333;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.score-badge { background: #1e88e5; }
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #1e88e5, #42a5f5);
+  transition: width 0.4s ease;
+}
+
+/* Pertanyaan */
+.question-card h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  text-align: left; /* Biar enak dibaca */
+}
+
+/* --- CSS TOMBOL JAWABAN & INDIKATOR --- */
+
+.btn-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.btn-option {
+  background: white;
+  border: 2px solid #e0e0e0; /* Border default abu tipis */
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  color: #444;
+}
+
+.btn-option:hover:not([disabled]) {
+  border-color: #1e88e5;
+  background: #f0f8ff;
+  transform: translateX(5px);
+}
+
+/* 1. STATUS: JAWABAN BENAR (Background Hijau) */
+.btn-option.correct {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  /* Kita tidak set border color di sini agar tidak menimpa border pilihan user */
+  border-color: #c3e6cb; 
+}
+
+/* Icon Centang untuk Jawaban Benar */
+.btn-option.correct::after {
+  content: " ✔";
+  font-weight: bold;
+  float: right;
+  color: #155724;
+}
+
+/* 2. STATUS: JAWABAN SALAH (Background Merah) */
+.btn-option.wrong {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  border-color: #f5c6cb;
+  opacity: 0.7; /* Sedikit transparan agar user fokus ke yang benar */
+}
+
+/* Icon Silang untuk Jawaban Salah */
+.btn-option.wrong::after {
+  content: " ✖";
+  font-weight: bold;
+  float: right;
+  color: #721c24;
+}
+
+/* 3. INDIKATOR PILIHAN USER (Border Biru Tebal) */
+/* Class ini ditambahkan lewat JS ke tombol yang diklik user */
+.btn-option.selected {
+  border: 3px solid #0d47a1 !important; /* Warna BIRU TUA TEBAL */
+  box-shadow: 0 0 10px rgba(13, 71, 161, 0.3); /* Efek glow biru */
+  transform: scale(1.02); /* Sedikit membesar */
+  opacity: 1 !important; /* Pastikan tidak transparan meski salah */
+  z-index: 2; /* Agar posisinya paling atas */
+}
+
+/* Tambahan Text "Jawabanmu" (Opsional, agar makin jelas) */
+/* Kita gunakan hack CSS untuk menambah teks di sebelah icon */
+.btn-option.selected::before {
+  font-weight: bold;
+}
+
+/* --- TOMBOL NEXT & NAVIGASI --- */
+.btn {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 136, 229, 0.3);
+}
+
+.pulse-anim { animation: pulse 2s infinite; }
+
+.next-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: #2c3e50; /* Warna beda biar kontras */
+}
+
+.btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #1e88e5;
+  color: #1e88e5;
+}
+.btn-outline:hover { background: #1e88e5; color: white; }
+
+/* --- RESULT SCREEN --- */
+.score-circle {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 10px 25px rgba(30, 136, 229, 0.5);
+}
+
+/* --- RESPONSIVE MOBILE (Untuk Layar < 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. CONTAINER: Memaksimalkan ruang */
+  .container {
+    padding: 15px;      /* Kurangi padding agar konten tidak terlalu sempit */
+    width: 90%;         /* Lebar hampir penuh */
+  }
+
+  /* 2. HEADER: Penyesuaian agar tidak memakan tempat */
+  header {
+    margin: 10px;       /* Margin dikecilkan (jika pakai style floating) */
+    padding: 25px 15px; /* Padding dalam header dikurangi */
+    border-radius: 15px; /* Radius sudut diperkecil sedikit */
+  }
+  
+  header h1 {
+    font-size: 1.8rem;  /* Font judul dikecilkan agar tidak turun baris berlebihan */
+  }
+  
+  header p {
+    font-size: 0.95rem;
+  }
+
+  /* 3. TOMBOL & ACCORDION: Area sentuh jari (Thumb-friendly) */
+  .accordion-btn {
+    font-size: 15px;
+    padding: 15px;      /* Pastikan area sentuh cukup besar */
+  }
+
+  .btn {
+    width: 100%;        /* Tombol aksi jadi lebar penuh di HP */
+    box-sizing: border-box; /* Agar padding tidak melebarkan tombol keluar layar */
+    margin-bottom: 10px;
+  }
+  
+  .btn-group {
+    flex-direction: column; /* Tombol jejer ke bawah, bukan ke samping */
+    width: 100%;
+  }
+
+  /* 4. KODE PROGRAM: Agar tidak merusak layout */
+  pre {
+    font-size: 12px;    /* Font coding dikecilkan */
+    padding: 10px;
+    /* overflow-x: auto sudah ada di CSS utama, jadi aman */
+  }
+
+  /* 5. QUIZ INTERFACE */
+  .card {
+    padding: 20px;      /* Card tidak perlu padding sebesar desktop */
+  }
+  
+  .score-circle {
+    width: 100px;       /* Lingkaran skor diperkecil */
+    height: 100px;
+    font-size: 2.5rem;
+  }
+  
+  .rules-container {
+    flex-direction: column; /* Aturan quiz menumpuk ke bawah */
+    gap: 10px;
+  }
+}

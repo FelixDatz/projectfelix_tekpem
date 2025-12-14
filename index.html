@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Algoritma Python</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Belajar Algoritma & Python Dasar</h1>
+  <p>Media Pembelajaran Interaktif untuk Siswa Kelas X SMK Bidang IT</p>
+</header>
+
+<main class="container">
+  <div class="accordion">
+  <button class="accordion-btn">1. Apa itu Algoritma & Pemrograman?</button>
+  <div class="accordion-content">
+    <p>
+      Secara sederhana, <strong>Algoritma</strong> adalah "resep" atau langkah-langkah logis untuk menyelesaikan masalah, 
+      sedangkan <strong>Pemrograman</strong> adalah proses menuliskan langkah-langkah tersebut agar dimengerti komputer.
+    </p>
+    
+    <div class="box info">
+      <ul>
+        <li><strong>Algoritma:</strong> Logika murni, tidak bergantung bahasa. (Contoh: Jika hujan, ambil payung).</li>
+        <li><strong>Pemrograman:</strong> Implementasi teknis menggunakan kode (coding).</li>
+      </ul>
+      <p><strong>Analogi:</strong> Algoritma adalah partitur musik, Pemrograman adalah aktivitas memainkannya.</p>
+      <p><strong>Contoh Algoritma (Logika):</strong></p>
+      <ol>
+        <li>Mulai.</li>
+        <li>Tentukan Panjang & Lebar.</li>
+        <li>Hitung Luas = Panjang x Lebar.</li>
+        <li>Tampilkan Luas.</li>
+        <li>Selesai.</li>
+      </ol>
+    </div>
+
+    <div class="box example">
+<pre>
+#Implementasi Algoritma
+panjang = 10
+lebar = 5
+luas = panjang * lebar
+print("Luas Persegi Panjang:", luas)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <button class="accordion-btn">2. Struktur Dasar Program Python</button>
+  <div class="accordion-content">
+    <p>Python memiliki struktur unik yang mengutamakan keterbacaan kode.</p>
+    
+    <div class="box info">
+      <ul>
+        <li><strong>Indentasi:</strong> Menggunakan spasi/tab untuk menandai blok kode (pengganti kurung kurawal `{}`).</li>
+        <li><strong>Case Sensitive:</strong> Huruf besar dan kecil dianggap berbeda (`Nama` ≠ `nama`).</li>
+        <li><strong>Komentar (#):</strong> Baris yang diawali `#` tidak akan dieksekusi.</li>
+      </ul>
+    </div>
+
+    <div class="box example">
+<pre>
+#Contoh Indentasi & Struktur
+def sapa_user():
+    # Baris ini menjorok ke dalam (indentasi)
+    print("Halo, selamat datang!")
+
+print("Program dimulai...")
+sapa_user()
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <button class="accordion-btn">3. Tipe Data & Variabel</button>
+  <div class="accordion-content">
+    <p>Variabel adalah wadah data. Di Python, tipe data ditentukan secara otomatis (Dynamic Typing).</p>
+    
+    <div class="box info">
+      <p><strong>Jenis Tipe Data Dasar:</strong></p>
+      <ul>
+        <li><code>int</code>: Bilangan bulat (contoh: 10, -5).</li>
+        <li><code>float</code>: Bilangan desimal (contoh: 3.14).</li>
+        <li><code>str</code>: Teks/String (contoh: "Halo").</li>
+        <li><code>bool</code>: Logika True/False.</li>
+      </ul>
+    </div>
+
+    <div class="box example">
+<pre>
+nama = "Budi"       # String
+umur = 25           # Integer
+tinggi = 170.5      # Float
+aktif = True        # Boolean
+
+print(f"Halo {nama}, umurmu {umur}")
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <button class="accordion-btn">4. Output & Program Hello World</button>
+  <div class="accordion-content">
+    <p>Fungsi utama untuk menampilkan output ke layar adalah <code>print()</code>.</p>
+    
+    <div class="box info">
+      <ul>
+        <li><strong>Standard:</strong> <code>print("Teks")</code>.</li>
+        <li><strong>f-string:</strong> Cara modern menyisipkan variabel ke teks dengan awalan huruf 'f'.</li>
+      </ul>
+    </div>
+
+    <div class="box example">
+<pre>
+#Output Biasa
+print("Hello World!")
+
+#Output dengan f-string (Modern)
+kota = "Jakarta"
+suhu = 30
+print(f"Suhu di {kota} adalah {suhu} derajat.")
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <button class="accordion-btn">5. Operasi Aritmatika</button>
+  <div class="accordion-content">
+    <p>Python dapat berfungsi sebagai kalkulator dengan operator matematika lengkap.</p>
+    
+    <div class="box info">
+      <ul>
+        <li><code>+ - * /</code> : Tambah, Kurang, Kali, Bagi.</li>
+        <li><code>//</code> : Pembagian Bulat (tanpa koma).</li>
+        <li><code>%</code> : Modulus (Sisa bagi).</li>
+        <li><code>**</code> : Pangkat.</li>
+      </ul>
+    </div>
+
+    <div class="box example">
+<pre>
+a = 10
+b = 3
+
+print("Bagi:", a / b)   # Hasil: 3.33..
+print("Bulat:", a // b) # Hasil: 3
+print("Sisa:", a % b)   # Hasil: 1
+print("Pangkat:", a ** 2) # Hasil: 100
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <button class="accordion-btn">6. Percabangan (If-Else)</button>
+  <div class="accordion-content">
+    <p>Cara komputer mengambil keputusan berdasarkan kondisi tertentu.</p>
+    
+    <div class="box info">
+      <ul>
+        <li><code>if</code>: Kondisi pertama.</li>
+        <li><code>elif</code>: Kondisi tambahan jika yang pertama salah.</li>
+        <li><code>else</code>: Pilihan terakhir jika semua salah.</li>
+      </ul>
+    </div>
+
+    <div class="box example">
+<pre>
+nilai = 75
+
+if nilai >= 90:
+    print("Grade A")
+elif nilai >= 70:
+    print("Grade B") # Ini yang tereksekusi
+else:
+    print("Belajar lagi ya")
+</pre>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <a href="quiz.html" class="btn">🎯 Ke Latihan Soal</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

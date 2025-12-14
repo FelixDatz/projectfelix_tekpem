@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal - Python</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="quiz-body">
+
+<div class="main-wrapper">
+  
+  <div id="start-screen" class="card active-card">
+    <div class="icon-header">🧩</div>
+    <h1>Siap untuk Latihan?</h1>
+    <p class="desc">
+      Kamu akan mengerjakan <strong>20 soal</strong> acak.<br>
+      Buktikan kemampuan codingmu sekarang!
+    </p>
+    
+    <div class="rules-container">
+      <div class="rule-item">✅ <span>+5 Poin / Benar</span></div>
+      <div class="rule-item">❌ <span>0 Poin / Salah</span></div>
+    </div>
+
+    <div class="btn-group">
+      <button id="start-btn" class="btn pulse-anim">🚀 Mulai Latihan</button>
+      <a href="index.html" class="btn btn-outline">⬅ Kembali ke Materi</a>
+    </div>
+  </div>
+
+  <div id="quiz-screen" class="hide">
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="quiz-header">
+      <span id="question-counter" class="badge">Soal 1 / 20</span>
+      <span id="score-live" class="badge score-badge">Skor: 0</span>
+    </div>
+    
+    <div class="card question-card">
+      <h3 id="question-text">Pertanyaan...</h3>
+      <div id="answer-buttons" class="btn-grid">
+        </div>
+    </div>
+
+    <div class="controls">
+      <button id="next-btn" class="btn next-btn hide">Lanjut ➡</button>
+    </div>
+  </div>
+
+  <div id="result-screen" class="card center-content hide">
+    <div class="icon-header">🏆</div>
+    <h2>Hasil Latihan</h2>
+    <p>Pencapaian belajarmu hari ini:</p>
+    
+    <div class="score-circle-container">
+      <div class="score-circle">
+        <span id="final-score">0</span>
+      </div>
+    </div>
+    
+    <p id="result-message" class="animate-text">Kata-kata motivasi</p>
+    
+    <div class="btn-group">
+      <button id="restart-btn" class="btn">🔄 Ulangi (Soal Acak)</button>
+      <a href="index.html" class="btn btn-outline">📘 Kembali Belajar</a>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 
